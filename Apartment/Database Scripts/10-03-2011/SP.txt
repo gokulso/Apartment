@@ -1,0 +1,23 @@
+ 
+
+
+DELIMITER //
+CREATE PROCEDURE InsertUser
+(
+IN Email varchar(64),
+IN Password varchar(64),
+IN UserTypeId smallint,
+IN IsOwner tinyint,   
+IN RoleId int,
+IN JoinDate datetime,
+IN InterCom int,
+IN IsStayingHere tinyint
+)
+BEGIN
+
+INSERT INTO User 
+(`Email`, `Password`, `UserTypeId`, `IsOwner`, `RoleId`, `JoinDate`, `InterCom`, `IsStayingHere`, `IsActive`)
+VALUES (Email, Password, UserTypeId, IsOwner, RoleId, JoinDate, InterCom, IsStayingHere, 1);
+
+END //
+DELIMITER;

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app id="WebApp_ID">
+	<display-name>Society</display-name>
+ 
+	<servlet>
+		<servlet-name>SocietyHandler</servlet-name>
+		<display-name>SocietyHandler</display-name>
+		<description></description>
+		<servlet-class>com.rpm.am.society.SocietyHandler</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>UserHandler</servlet-name>
+		<display-name>UserHandler</display-name>
+		<description></description>
+		<servlet-class>com.rpm.am.user.UserHandler</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>ComplaintHandler</servlet-name>
+		<display-name>ComplaintHandler</display-name>
+		<description></description>
+		<servlet-class>com.rpm.am.user.ComplaintHandler</servlet-class>
+	</servlet>
+	
+	
+	<servlet>
+		<servlet-name>VendorHandler</servlet-name>
+		<display-name>VendorHandler</display-name>
+		<description></description>
+		<servlet-class>com.rpm.am.vendor.VendorHandler</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>NoticeHandler</servlet-name>
+		<display-name>NoticeHandler</display-name>
+		<description></description>
+		<servlet-class>com.rpm.am.user.NoticeHandler</servlet-class>
+	</servlet>
+	
+	
+	
+	<servlet-mapping>
+		<servlet-name>UserHandler</servlet-name>
+		<url-pattern>/user/login.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UserHandler</servlet-name>
+		<url-pattern>/user/logout.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>SocietyHandler</servlet-name>
+		<url-pattern>/society/registerSociety.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>UserHandler</servlet-name>
+		<url-pattern>/user/registerUser.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>UserHandler</servlet-name>
+		<url-pattern>/user/registerMember.do</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet-mapping>
+		<servlet-name>VendorHandler</servlet-name>
+		<url-pattern>/vendor/registerVendor.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>NoticeHandler</servlet-name>
+		<url-pattern>/society/noticeboard.do</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	
+ 	<servlet-mapping>
+		<servlet-name>UserHandler</servlet-name>
+		<url-pattern>/user/changePassword.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>UserHandler</servlet-name>
+		<url-pattern>/user/lostpassword.do</url-pattern>
+	</servlet-mapping>
+ 
+ 	<servlet-mapping>
+		<servlet-name>UserHandler</servlet-name>
+		<url-pattern>/user/registerVerification.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UserHandler</servlet-name>
+		<url-pattern>/user/resendPassword.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>SocietyHandler</servlet-name>
+		<url-pattern>/SocietyHandler</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ComplaintHandler</servlet-name>
+		<url-pattern>/user/complaint.do</url-pattern>
+	</servlet-mapping>
+	
+	 
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+
+</web-app>

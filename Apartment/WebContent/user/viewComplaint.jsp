@@ -1,0 +1,66 @@
+<%@ include file="../user/include_user_header.jsp"%> 	
+ 
+
+<%
+	String errorMessage = "";
+	if(request.getAttribute("errorMessage")!=null)
+	{
+		 errorMessage = request.getAttribute("errorMessage").toString();
+	}		 
+		
+	String redirect_to = "";
+	if(request.getAttribute("redirect_to")!=null)
+	{
+		redirect_to = request.getAttribute("redirect_to").toString();
+	}
+	System.out.println("########## redirect_to  = " + redirect_to);
+
+	//Get Vendor List
+%>		
+ 
+<%
+	//Show Page Title ( Display the society selected + Welcome message)
+%> 
+
+<%		
+
+ComplaintBean viewComplaint = (ComplaintBean) request.getAttribute("viewComplaint");
+System.out.println("########## viewComplaint  = " + viewComplaint.getSubject());
+
+%>
+
+<title>Complaints - <%=viewComplaint.getSubject() %></title>
+ 
+</head>				 
+
+<BODY>
+<div id="body">
+	<div id="header"><%@ include file="../common/header.jsp"%>
+	</div>
+ 
+	<div id="content">
+		<TABLE align="center">
+			<TR>
+				<TD valign="top" width="100%"><!-- Page Data -->
+					<div id="data" align="center">
+						<DIV ID="calendarPopupDiv" STYLE="position:absolute;visibility:hidden;background-color:white;layer-background-color:white;"></DIV>
+								 
+						<table id="simple-table-1" width="100%" >
+								<tr>
+									<td colspan="3"><b><%=errorMessage%></b></td>
+								</tr>
+								 <tr>
+									<td colspan="3"><%@ include file="include_complaint_view.jsp"%></td>
+								</tr>
+						</table>
+					</div>
+				</TD>
+				
+			</TR>
+		</TABLE>
+	</div>
+	<div id="footer" align="center">
+		<%@ include file="../common/footer.jsp"%></div>
+	</div>
+</body>
+</html> 

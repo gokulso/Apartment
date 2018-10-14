@@ -1,0 +1,278 @@
+CREATE TABLE Role(
+	Id int NOT NULL,
+	Name varchar(256) NOT NULL,
+	IsEnabled tinyint NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	Id ASC
+)
+) 
+;
+
+
+CREATE TABLE Relation(
+	Id int NOT NULL,
+	Name varchar(256) NOT NULL,
+	IsActive tinyint NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	Id ASC
+)
+) 
+
+;
+
+CREATE TABLE Country(
+	Id int NOT NULL,
+	Name varchar(256) NOT NULL,
+	IsEnabled tinyint NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	Id ASC
+)
+) 
+
+;
+
+
+CREATE TABLE UserType(
+	Id smallint NOT NULL,
+	Name varchar(256) NOT NULL,
+	IsEnabled tinyint NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	Id ASC
+)
+) 
+;
+
+
+CREATE TABLE State(
+	Id int NOT NULL,
+	CountryId int NOT NULL,
+	Name varchar(256) NOT NULL,
+	IsEnabled tinyint NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	Id ASC
+)
+) 
+
+
+;
+CREATE TABLE City(
+	Id int NOT NULL,
+	StateId int NOT NULL,
+	Name varchar(256) NOT NULL,
+	IsEnabled tinyint NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	Id ASC
+)
+) 
+
+;
+CREATE TABLE Society(
+	Id int NOT NULL,
+	Name varchar(256) NOT NULL,
+	Address1 varchar(256) NOT NULL,
+	Address2 varchar(256) NULL,
+	CityId int NOT NULL,
+	Mobile smallint NOT NULL,
+	Phone smallint NULL,
+	Email varchar(64) NOT NULL,
+	Website varchar(255) NULL,
+	IsActive tinyint NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	Id ASC
+)
+) 
+
+
+;
+CREATE TABLE User(
+	Id int NOT NULL,
+	SocietyId int NOT NULL,
+	Email varchar(64) NULL,
+	Password varchar(64) NOT NULL,
+	UserTypeId smallint NOT NULL,
+	IsOwner tinyint NOT NULL,   
+	RoleId int NULL,
+	JoinDate datetime NOT NULL,
+	InterCom int NULL,
+	IsStayingHere tinyint NOT NULL,
+	IsActive tinyint NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	Id ASC
+)
+) 
+
+
+;
+CREATE TABLE MemberInformation(
+	Id int NOT NULL,
+	UserId int NOT NULL,
+	RelationId int NOT NULL,
+	Name varchar(256) NOT NULL,
+	DOB datetime NULL,
+	BadgeNumber int NULL,
+	Wing varchar(256) NOT NULL,
+	FlatNumber smallint NOT NULL,
+	Mobile smallint NOT NULL,
+	Phone smallint NULL,
+	Email varchar(64) NULL,
+	IsActive tinyint NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	Id ASC
+)
+) 
+;
+
+
+
+CREATE TABLE VendorInformation(
+	Id int NOT NULL,
+	UserId int NOT NULL,
+	Name varchar(256) NOT NULL,
+	BadgeNumber int NULL,
+	Wing varchar(256) NULL,
+	ShopNumber smallint NULL,
+	Mobile smallint NOT NULL,
+	Phone smallint NULL,
+	Email varchar(64) NULL,
+	VendorTypeId smallint, 
+	IsActive tinyint NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	Id ASC
+)
+) 
+;
+
+CREATE TABLE ServiceRequest(
+	Id int NOT NULL,
+	VendorId int NOT NULL,  
+	RequesterId int NOT NULL,  
+	RequestDate Datetime NOT NULL,
+	StatusId int NULL, 
+	Description varchar(7000),
+PRIMARY KEY CLUSTERED 
+(
+	Id ASC
+)
+) 
+;
+
+
+CREATE TABLE NoticeBoard(
+	Id int NOT NULL,
+	UserId int NOT NULL,  
+	Notice varchar(7000) NOT NULL, 
+	Date Datetime NOT NULL,
+	Expiry Datetime NOT NULL,
+	FrequencyId smallint null, 
+	ExecuteOn varchar(64) null, 
+	IsPublic tinyint not null, 
+	IsActive tinyint NOT NULL, 
+PRIMARY KEY CLUSTERED 
+(
+	Id ASC
+)
+) 
+;
+
+
+CREATE TABLE Forum(
+	Id int NOT NULL,
+	UserId int NOT NULL,  
+	Forum varchar(7000) NOT NULL, 
+	Date Datetime NOT NULL,
+	IsPublic tinyint NOT NULL, 
+	IsActive tinyint NOT NULL, 
+PRIMARY KEY CLUSTERED 
+(
+	Id ASC
+)
+) 
+;
+
+
+CREATE TABLE Poll(
+	Id int NOT NULL,
+	UserId int NOT NULL,  
+	Poll varchar(7000) NOT NULL, 
+	Date Datetime NOT NULL,
+	Expiry Datetime NOT NULL,
+	IsPublic tinyint not null, 
+	Yes int not null,
+	No int not null,
+	NoComments int not null,
+	IsActive tinyint NOT NULL, 
+PRIMARY KEY CLUSTERED 
+(
+	Id ASC
+)
+) 
+;
+
+
+CREATE TABLE Gallory(
+	Id int NOT NULL,
+	Name varchar(1000) NOT NULL,
+	UserId int NOT NULL, 
+	Date Datetime NOT NULL,
+	IsActive tinyint NOT NULL, 	
+PRIMARY KEY CLUSTERED 
+(
+	Id ASC
+)
+) 
+;
+
+
+CREATE TABLE GalloryDetails(
+	Id int NOT NULL,
+	GalloryId int not null,
+	Tag varchar(255) NOT NULL,
+	Description varchar(1000) NOT NULL,
+	PhotoUrl varchar(255) not null,
+	Date Datetime NOT NULL,
+	IsActive tinyint NOT NULL, 	
+PRIMARY KEY CLUSTERED 
+(
+	Id ASC
+)
+) 
+;
+
+CREATE TABLE CommentType
+(
+	Id int NOT NULL,
+	Name varchar(256) not null, 
+	IsActive tinyint not null,
+PRIMARY KEY CLUSTERED 
+(
+	Id ASC
+)
+) 
+;
+
+
+CREATE TABLE Comments
+(
+	Id int NOT NULL,
+	CommentTypeId varchar(256) not null, 
+	UserId int not null,
+	SourceId int not null, 
+	Date datetime not null,
+	IsActive tinyint not null,
+PRIMARY KEY CLUSTERED 
+(
+	Id ASC
+)
+) 
+;
+

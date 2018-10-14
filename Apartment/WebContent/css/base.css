@@ -1,0 +1,261 @@
+/*
+
+BODY
+|
+__________________________
+| | |
+HEADER CONTENT FOOTER
+|
+__________________________
+| | |
+LEFT NAV DATA RIGHTNAV
+
+
+*/
+
+html {
+	height:100%;
+}
+
+body {
+	margin:0;
+	padding:0;
+	
+	background:#E9F1FC;
+	text-align:left;
+
+	font-family:Verdana, Arial, Helvetica,  sans-serif;
+	font-size:85%;
+	color:#595959;
+	line-height:1.3em;
+}
+
+
+
+#body { 
+	width:998px;
+	margin:0px auto;
+	padding:0px;	
+	
+	background:#F9F8F8;
+	color:#595959;
+
+	border: 1px solid gray;	 
+	font-size:85%;
+	font-family:Verdana, Arial, Helvetica,  sans-serif;	
+	text-align:center;
+}
+
+#header {
+	_float:left;
+	margin:0;
+	padding:0px;
+	margin-bottom:10px;
+	background:#FFFFFF;
+	font-size: 80%;
+	clear: both;
+}
+
+#content {	
+	width:998px;
+	margin:0px auto;
+	padding:0px;
+	text-align:center;
+
+}
+
+#footer {
+	padding: .1em;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #fff;	
+	color: #333;
+	font-size: 90%;
+	clear: both;
+}
+
+#sectionColumn{ 
+	border: 1px solid rgb(221, 221, 221);
+	margin:1px 1px 1px 1px; 
+	padding:1px 1px 1px 1px;
+}
+
+#sectionColumn td {
+	margin:1px 1px 1px 1px; 
+}
+
+ 
+sectionColumnOuter{ 
+	border: 1px solid rgb(221, 221, 221);
+	margin:1px 1px 1px 1px; 
+	padding:1px 1px 1px 1px;
+}
+
+#sectionColumnOuter td {
+	margin:1px 1px 1px 1px;
+} 
+ 
+.hrFooter {
+	color: #f00;
+	background-color: #f00;
+	height: 1px;	
+}
+
+#sideBar {
+	float: right;
+	width: 340px;
+	padding: 1px 1px 1px 1px;
+	vertical-align: top;
+}
+
+#lefttNav {
+	float: left;
+	width: 170px;
+	padding: 5px 0 0 5px;
+	vertical-align: top;
+}
+
+#data {
+	width: 640px;
+	padding: .1em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#rightNav {
+	float: right;
+	width: 170px;
+	padding: 5px 0 0 5px;
+	vertical-align: top;
+}
+
+
+
+.link_button_small {
+	background: #3798B9 url(../images/link_bg.gif) repeat-x;
+	padding: 2px 2px 2px 2px;
+	font-size: 90%;
+	vertical-align: middle;
+	text-align: center;
+	margin: 2px 2px 2px 2px;
+	height: 10px
+}
+
+.link_button_small a {
+	
+	color: #fff;
+	font-weight: bold;	
+	vertical-align: middle;
+	text-decoration: none;
+}
+
+.link_button_small a:hover {
+	background-repeat: repeat-x;
+	font-weight: bold;
+	vertical-align: middle;
+	text-decoration: none;
+	color: yellow;
+}
+
+
+/** Table - hor-zebra **/
+
+#hor-zebra{
+	text-align:left;
+	border-collapse:collapse;
+	margin:2px;
+	color:#039;
+	background:#FFFFFF;
+	border:1px solid #69c;
+	
+}
+
+#hor-zebra th{
+	font-weight:normal;
+	color:#039;
+	padding:10px 8px;
+}
+
+#hor-zebra td{
+	color: #330066;
+	padding:6px;
+}
+
+#hor-zebra .odd{
+	background:#EFECEC;
+}
+
+
+#box-table{
+	text-align:left;
+	border-collapse:collapse;
+	margin:20px;
+	}
+
+#box-table th{
+	font-weight:normal;
+	background:#b9c9fe;
+	border-top:4px solid #aabcfe;
+	border-bottom:1px solid #fff;
+	color:#039;
+	padding:8px;
+	}
+
+#box-table td{
+	background:#e8edff;
+	border-bottom:1px solid #fff;
+	color:#669;
+	border-top:1px solid transparent;
+	padding:8px;
+	}
+
+#box-table tr:hover td{
+	background:#d0dafd;
+	color:#339;
+	}
+
+#simple-table-1{
+	text-align:left;
+	border-collapse:collapse;
+	border:1px solid #69c;
+	margin:1px;
+	background-color: white;
+	}
+
+#simple-table-1 th{
+	font-weight:normal;
+	color:#039;
+	border-bottom:1px dashed #69c;
+	padding:1px ;
+	}
+
+#simple-table-1 td{
+	color:#669;
+	padding:1px ;
+	}
+	 
+	
+#BorderTable {
+	border-width: 1px;
+	border-spacing: 2px;
+	border-style: outset;
+	border-color: #dddddd; 
+	border-collapse: collapse;
+	background-color: white;
+}
+#BorderTable th {
+	border-width: 0px;
+	padding: 1px;
+	border-style: none;
+	border-color: gray;
+	background-color: white;
+	-moz-border-radius: 0px 0px 0px 0px;
+}
+#BorderTable td {
+	border-width: 0px;
+	padding: 1px;
+	border-style: none;
+	border-color: gray; 
+	background-color: white;
+	-moz-border-radius: 0px 0px 0px 0px;
+}
