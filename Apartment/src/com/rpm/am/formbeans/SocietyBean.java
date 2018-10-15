@@ -17,12 +17,12 @@ public class SocietyBean extends UserBean
 	private	String society_website	="";
 	private	boolean society_isactive	= false;
 	
-	//private ArrayList memberBean = new ArrayList();
+	private ArrayList memberBean = new ArrayList();
 	
 	
 	public SocietyBean(HttpServletRequest request)
 	{
-		//super(request);
+		super(request);
 		
 		if (request.getParameter("society_id") !=null)
 			this.society_id =Integer.parseInt(request.getParameter("society_id"));
@@ -41,8 +41,8 @@ public class SocietyBean extends UserBean
 		
 		this.society_isactive	=Boolean.parseBoolean(request.getParameter("society_isactive"));
 		
-		//MemberBean member = new MemberBean(request);
-		//this.memberBean.add(member);
+		MemberBean member = new MemberBean(request);
+		this.memberBean.add(member);
 	}
 	
 	
@@ -64,7 +64,7 @@ public class SocietyBean extends UserBean
 	 * @param apartment_Id the apartment_Id to set
 	 */
 	public void setSocietyId(int society_id) {
-		society_id = society_id;
+		this.society_id = society_id;
 	}
 
 
@@ -80,7 +80,7 @@ public class SocietyBean extends UserBean
 	 * @param apartment_Name the apartment_Name to set
 	 */
 	public void setSocietyName(String society_name) {
-		society_name = society_name;
+		this.society_name = society_name;
 	}
 
 
@@ -96,7 +96,7 @@ public class SocietyBean extends UserBean
 	 * @param apartment_Address1 the apartment_Address1 to set
 	 */
 	public void setSocietyAddress1(String society_address1) {
-		society_address1 = society_address1;
+		this.society_address1 = society_address1;
 	}
 
 
@@ -112,7 +112,7 @@ public class SocietyBean extends UserBean
 	 * @param apartment_Address2 the apartment_Address2 to set
 	 */
 	public void setSocietyAddress2(String society_address2) {
-		society_address2 = society_address2;
+		this.society_address2 = society_address2;
 	}
 
 
@@ -128,7 +128,7 @@ public class SocietyBean extends UserBean
 	 * @param apartment_CityId the apartment_CityId to set
 	 */
 	public void setSocietyCityId(int society_cityid) {
-		society_cityid = society_cityid;
+		this.society_cityid = society_cityid;
 	}
 
 
@@ -144,7 +144,7 @@ public class SocietyBean extends UserBean
 	 * @param apartment_Mobile the apartment_Mobile to set
 	 */
 	public void setSocietyMobile(String society_mobile) {
-		society_mobile = society_mobile;
+		this.society_mobile = society_mobile;
 	}
 
 
@@ -160,7 +160,7 @@ public class SocietyBean extends UserBean
 	 * @param apartment_Phone the apartment_Phone to set
 	 */
 	public void setSocietyPhone(String society_phone) {
-		society_phone = society_phone;
+		this.society_phone = society_phone;
 	}
 
 
@@ -176,7 +176,7 @@ public class SocietyBean extends UserBean
 	 * @param apartment_Email the apartment_Email to set
 	 */
 	public void setSocietyEmail(String society_email) {
-		society_email = society_email;
+		this.society_email = society_email;
 	}
 
 
@@ -192,7 +192,7 @@ public class SocietyBean extends UserBean
 	 * @param apartment_Website the apartment_Website to set
 	 */
 	public void setSocietyWebsite(String society_website) {
-		society_website = society_website;
+		this.society_website = society_website;
 	}
 
 
@@ -208,21 +208,21 @@ public class SocietyBean extends UserBean
 	 * @param apartment_IsActive the apartment_IsActive to set
 	 */
 	public void setSocietyIsActive(boolean society_isactive) {
-		society_isactive = society_isactive;
+		this.society_isactive = society_isactive;
 	}
 	
 	/**
 	 * @return the user_MemberBean
 	 */
-	//public ArrayList getUserMemberBean() {
-	//	return memberBean;
-	//}
+	public ArrayList getUserMemberBean() {
+		return memberBean;
+	}
 	/**
 	 * @param user_MemberBean the user_MemberBean to set
 	 */
-	//public void setUserMemberBean(ArrayList memberBean) {
-	//	this.memberBean = memberBean;
-	//}
+	public void setUserMemberBean(ArrayList memberBean) {
+		this.memberBean = memberBean;
+	}
 	
 
  	
