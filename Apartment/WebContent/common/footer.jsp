@@ -9,7 +9,7 @@
 	<tr>
 		<td align="center" >
 		
-			Copyright © 2011 ApartmentManager.com | 
+			Copyright © ApartmentManager.com | 
 			
 		</td>
 	</tr>
