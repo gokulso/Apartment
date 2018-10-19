@@ -96,7 +96,8 @@
 											<tr>
 												<td align="right">Society:</td>
 													<td align="left">
-														<select id="societies" name="societies"  tabindex="107" class="required" tmt:required="true" tmt:errorclass="invalid" tmt:message="Please select society name" />
+														<!-- <select id="societies" name="societies"  tabindex="107" class="required" tmt:required="true" tmt:errorclass="invalid" tmt:message="Please select society name" /> -->
+														<select id="society_id" name="society_id"  tabindex="107" class="required" tmt:required="true" tmt:errorclass="invalid" tmt:message="Please select society name" />
 														<option value="" >Select Society Name </option>
 														<% 
 														Iterator societylist  = ApartmentUtil.getEntity("uspGetSocietyList 0,"+selectedCity);

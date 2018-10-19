@@ -57,9 +57,9 @@ System.out.println("path==" +contextPath);%>
 		
 		System.out.println("Forward to Login page");
 %>
-	<jsp:forward page="../user/login.jsp"></jsp:forward>
+	<%--  <jsp:forward page="../user/login.jsp"></jsp:forward>  --%>
 <% 		
-		System.out.println("After Forward to Login page");
+	   System.out.println("After Forward to Login page");
 	}
 %>
 

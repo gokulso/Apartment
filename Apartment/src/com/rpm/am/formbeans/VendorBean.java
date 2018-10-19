@@ -19,7 +19,7 @@ public class VendorBean
 	private  String vendor_phone= "";
 	private  String vendor_email	= "";
 	private int vendor_typeid	= 0;
-	private java.util.Date vendor_createddate = null;
+	//private java.util.Date vendor_createddate = null;
 	private boolean vendor_isactive	=false;
 	
 	public VendorBean()
@@ -48,8 +48,8 @@ public class VendorBean
 			if(request.getParameter("vendor_typeid")!=null)
 				this.vendor_typeid	=Integer.parseInt(request.getParameter("vendor_typeid"));
 			
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		 		this.vendor_createddate		= sdf.parse((String)(request.getParameter("vendor_createddate")));
+			/*SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		 		this.vendor_createddate		= sdf.parse((String)(request.getParameter("vendor_createddate")));*/
 		 	
    		    this.vendor_isactive = Boolean.parseBoolean(request.getParameter("vendor_isactive"));
 			
@@ -133,14 +133,14 @@ public class VendorBean
 		this.vendor_typeid = vendor_typeid;
 	}
 
-	public java.util.Date getVendorCreateddate() {
+	/*public java.util.Date getVendorCreateddate() {
 		return vendor_createddate;
 	}
 
 	public void setVendorCreateddate(java.util.Date vendor_createddate) {
 		this.vendor_createddate = vendor_createddate;
 	}
-
+*/
 	public boolean isVendorIsactive() {
 		return vendor_isactive;
 	}

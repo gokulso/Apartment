@@ -575,10 +575,12 @@ SET NOCOUNT ON
 			INSERT INTO [dbo].[UserSociety]
 				   ([UserId]
 				   ,[SocietyId]
-				   ,[IsActive])
+				   ,[IsActive]
+				   ,[IsDefault])
 			 VALUES
 				   (@UserId
 				   ,@SocietyId
+				   ,1
 				   ,1)
 		END
 

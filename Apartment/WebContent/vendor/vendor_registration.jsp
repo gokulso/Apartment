@@ -98,12 +98,12 @@
 											<tr>
 												<td align="right">Vendor Type: </td>
 												<td align="left"><select name="vendor_typeid" width="100" tabindex="110">
-<option value="" >Select </option>
-<% 
-Hashtable vendortypes= ApartmentUtil.getEntityTypes("VendorType");
-for (int i=1; i<vendortypes.size();i++) {%>
-<option value="<%=i%>" ><%=vendortypes.get(new Integer(i))%></option>
-<% }%>
+														<option value="" >Select </option>
+														<% 
+														Hashtable vendortypes= ApartmentUtil.getEntityTypes("VendorType");
+														for (int i=1; i<vendortypes.size();i++) {%>
+														<option value="<%=i%>" ><%=vendortypes.get(new Integer(i))%></option>
+														<% }%>
 												</select>
 												<td>									
 											</tr>

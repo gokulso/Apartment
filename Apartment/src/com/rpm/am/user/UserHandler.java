@@ -194,7 +194,7 @@ public class UserHandler extends HttpServlet
 		{
 			try
 			{
-				int status = createUser(userBean);
+				int status = createUser(userBean,societyBean);
 				logger.info("Satus :  "+status);
 				
 				if(status==0)
@@ -417,7 +417,7 @@ public class UserHandler extends HttpServlet
 	} 
 	
 	 
-	public int  createUser(UserBean userBean) throws UserRegistrationFailedException
+	public int  createUser(UserBean userBean, SocietyBean societyBean) throws UserRegistrationFailedException
 	{
 		int returnStatus=0; 
 		
@@ -432,7 +432,7 @@ public class UserHandler extends HttpServlet
 			
 			procUserAdd = con.prepareCall("{ call uspAddUser(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
 		    
-			procUserAdd.setInt("SocietyId",1);
+			procUserAdd.setInt("SocietyId", societyBean.getSocietyId());
 			procUserAdd.setString("Email",userBean.getUserEmail());
 			procUserAdd.setString("Password",userBean.getUserPassword());
 			procUserAdd.setInt("UserTypeId",DataConstants.USER_TYPE_APT_MEMBER);
