@@ -58,9 +58,10 @@ public class EmailSender
      // -- Create a new message --
      Message msg = new MimeMessage(session);
      // -- Set the FROM and TO fields --
-     msg.setFrom(new InternetAddress("admin@portalseven.com"));
+     msg.setFrom(new InternetAddress("sonawane.gokul@gmail.com"));
      msg.setRecipients(Message.RecipientType.TO,
-       InternetAddress.parse("pravin404@yahoo.com", false));
+       //InternetAddress.parse("gokul.sonawane@harbingergroup.com", false));
+    		 InternetAddress.parse(to, false));
      // -- We could include CC recipients too --
      // if (cc != null)
      // msg.setRecipients(Message.RecipientType.CC

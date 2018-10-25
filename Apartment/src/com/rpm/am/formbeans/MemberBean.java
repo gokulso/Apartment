@@ -22,6 +22,7 @@ public class MemberBean
 	private  String member_phone= "";
 	private  String member_email	= "";
 	private  boolean member_isactive = false;
+	private Date ceateDate;
 	 
 	public MemberBean(HttpServletRequest request)
 	{
@@ -69,6 +70,20 @@ public class MemberBean
 	public MemberBean() {
 		// TODO Auto-generated constructor stub
 	}
+	
+	/**
+	 *  Constructor to setDate from MemberInformation
+	 */
+	public MemberBean(int id, String name,String wing,String mobile, Date date, boolean IsActive) {
+		this.member_id = id;
+		this.member_name = name;
+		this.member_wing = wing;
+		this.member_mobile = mobile;
+		this.ceateDate = date;
+		this.member_isactive = IsActive;
+	}
+	
+	
 
 	/**
 	 * @return the member_id
@@ -240,5 +255,13 @@ public class MemberBean
 	 */
 	public void setMemberIsActive(boolean member_isactive) {
 		this.member_isactive = member_isactive;
+	}
+
+	public Date getCeateDate() {
+		return ceateDate;
+	}
+
+	public void setCeateDate(Date ceateDate) {
+		this.ceateDate = ceateDate;
 	}
 }

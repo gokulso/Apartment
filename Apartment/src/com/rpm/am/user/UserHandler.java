@@ -105,6 +105,7 @@ public class UserHandler extends HttpServlet
 		UserBean userBean = new UserBean(request);
 		ComplaintBean complaintBean = new ComplaintBean(request);
 		
+		
 		if(action!=null || ! action.equalsIgnoreCase("registerComplaint"))
 		{
 			/*
@@ -164,7 +165,7 @@ public class UserHandler extends HttpServlet
 				 
 				 System.out.println("###### session status = " +session.toString());
 				 
-				 String requestedPage = PageNameConstants.PAGE_USER_DASHBOARD ;//REDIRECT_TO
+				// String requestedPage = PageNameConstants.PAGE_USER_DASHBOARD ;//REDIRECT_TO
 				 
 				 //Redirect to requested page
 				 
@@ -201,7 +202,7 @@ public class UserHandler extends HttpServlet
 				{
 					//Send confirmation email
 					//sendConfirmationEmail(userBean.getUserName(),userBean.getUserEmail(),activationKey);
-					request.setAttribute(ERROR_MESSAGE, "Please check your email and click on the activation link to complete the registration.");	
+					request.setAttribute(ERROR_MESSAGE, "User Registration Successful.");	
 					redirectPage = PageNameConstants.PAGE_ACTION_SUCCESS;
 					System.out.println("Status : "+status);
 				}
@@ -227,7 +228,7 @@ public class UserHandler extends HttpServlet
 				{
 					//Send confirmation email
 					//sendConfirmationEmail(userBean.getUserName(),userBean.getUserEmail(),activationKey);
-					request.setAttribute(ERROR_MESSAGE, "Please check your email and click on the activation link to complete the registration.");	
+					request.setAttribute(ERROR_MESSAGE, "Member Registration Successful.");	
 					redirectPage = PageNameConstants.PAGE_ACTION_SUCCESS;
 					System.out.println("Status : "+status);
 					System.out.println("Member Added Successfully.");
@@ -243,6 +244,11 @@ public class UserHandler extends HttpServlet
 			}
 			catch(Exception e)
 			{}
+		} else if(action.equalsIgnoreCase("approvedresidents"))
+		{
+			System.out.println("Inside View approved residents");
+			userBean = viewRegisteredUsers(userBean);
+			request.setAttribute("userBean", userBean);
 		}
 		else if(action.equalsIgnoreCase("changePassword"))
 		{
@@ -278,6 +284,35 @@ public class UserHandler extends HttpServlet
 		{
 			e.printStackTrace();
 		}
+	}
+
+	private UserBean viewRegisteredUsers(UserBean userBean) {
+		
+		ArrayList noticeList = new ArrayList();
+		String sql = "SELECT * FROM [user]  where id=" + userBean.getUserIsActive()  ;
+		Connection con = DatabaseConnection.getConnection();	
+		System.out.println("get user SQL = " + sql );
+		userBean = new UserBean();
+		try
+		{
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+			int count = 1 ;
+			while(rs.next())
+			{ 
+			
+			}
+			
+			rs.close();
+			con.close();
+			
+		} 
+		catch (SQLException e) 
+		{
+			System.out.println("SQLException" + e.toString() );
+			e.printStackTrace();
+		}
+		return userBean;
 	}
 
 	private MemberBean getMemberData(MemberBean memberBean, int userId) 
@@ -556,6 +591,40 @@ public class UserHandler extends HttpServlet
 			 e.printStackTrace();
 		}
 		return returnStatus;
+	}
+	
+	public ArrayList getCurrentMembers(String userId,String apartmentId){
+							ArrayList memberList = new ArrayList();
+		
+		String sql = "SELECT ID, NAME, WING, MOBILE, CREATEDDATE,IsActive FROM MemberInformation " ;
+		Connection con = DatabaseConnection.getConnection();	
+		System.out.println("SQL = " + sql );
+		
+		try
+		{
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+			int count = 1 ;
+		
+			while(rs.next())
+			{
+				System.out.println("Inside RS  = " + count );
+				//System.out.println("Description  = " + rs.getString("Description") );
+				MemberBean memberBean = new MemberBean(rs.getInt("Id"),rs.getString("Name"),rs.getString("Wing"),rs.getString("Mobile"),rs.getDate("CreatedDate"), rs.getBoolean("IsActive"));
+				memberList.add(memberBean);
+				count ++; 
+			}
+			
+			rs.close();
+			con.close();
+			
+		} 
+		catch (SQLException e) 
+		{
+			System.out.println("SQLException" + e.toString() );
+			e.printStackTrace();
+		}
+		return memberList ;
 	}
 }
 

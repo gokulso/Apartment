@@ -29,6 +29,9 @@ public class PageNameConstants
 	public static String PAGE_COMPLAINT_DASHBOARD = "../user/complaints.jsp";
 	public static String PAGE_COMPLAINT_VIEW = "../user/viewComplaint.jsp";
 	
+	//Approved Users
+	public static String PAGE_DASHBOARD_VIEW = "../admin/approvedusers.jsp";
+	
 	
 	
 }

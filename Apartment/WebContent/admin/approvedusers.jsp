@@ -66,19 +66,33 @@
 												<td align="left""><input type="submit" value="Search User History" class="buttonStandard" tabindex="102"   title="Search"></td>
 											</tr>
 											<tr><td colspan="9">&nbsp;</td></tr>
-											
-											<tr>
-											<td colspan="12">
-											<table border="1" width="100%">
-											<tr>
-											<th>Flat</th><th>Name</th><th>Phone/Mobile</th><th>Email</th><th>Intercom</th><th>User Status</th><th>Lives Here</th><th>Joined On</th><th>LastLog</th><th>Assoc.Member</th><th>SMS/Email</th><th>Edit</th>
-											</tr>
-											<tr><td colspan="8">Accepting Data from database and Displaying  when Residents will be there </td></tr>
-											</table>
-											</td>
-											</tr>
-											
-										</table>
+
+													<tr>
+														<td colspan="12">
+															<table border="1" width="100%">
+																<tr>
+																	<th>Flat</th>
+																	<th>Name</th>
+																	<th>Phone/Mobile</th>
+																	<th>Email</th>
+																	<th>Intercom</th>
+																	<th>User Status</th>
+																	<th>Lives Here</th>
+																	<th>Joined On</th>
+																	<th>LastLog</th>
+																	<th>Assoc.Member</th>
+																	<th>SMS/Email</th>
+																	<th>Edit</th>
+																</tr>
+																<tr>
+																	<td colspan="8">Accepting Data from database and
+																		Displaying when Residents will be there</td>
+																</tr>
+															</table>
+														</td>
+													</tr>
+
+												</table>
 										</fieldset>
 									</form>
 								</td>

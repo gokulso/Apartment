@@ -34,7 +34,8 @@
 <table width="100%" cellSpacing="1" cellPadding="1" align="center" border="1">
 	<tr>
 		<td align="left" width="660">
-			 <a href="../user/index_new.jsp">Dashboard</a> |  <a href="../society/noticeboard.jsp">Notice Board </a>|  <a href="../user/complaints.jsp">Complaints </a>
+			 <a href="../user/index_new.jsp">Dashboard</a> |  <a href="../society/noticeboard.jsp">Notice Board </a>|  <a href="../user/complaints.jsp">Complaints </a> |
+			 <a href="../index.jsp">Home </a>
 		</td>
 	</tr>
 </table>

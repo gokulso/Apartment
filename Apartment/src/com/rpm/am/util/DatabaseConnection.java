@@ -44,11 +44,11 @@ public class DatabaseConnection
 			Connection con = null;
 			Statement stmt = null;
 			
-			System.out.println("MySQL Connect Example");
+			System.out.println("SQL Connect Example");
 		    
 			String url = "jdbc:jtds:sqlserver://localhost:1433/Apartment";
 			String userName = "sa";
-			String password = "root";
+			String password = "test_1234";
  
 		    //String driver = "sun.jdbc.odbc.JdbcOdbcDriver";
 			 

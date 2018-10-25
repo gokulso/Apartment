@@ -76,9 +76,6 @@
 		<url-pattern>/society/noticeboard.do</url-pattern>
 	</servlet-mapping>
 	
-	
-	
-	
  	<servlet-mapping>
 		<servlet-name>UserHandler</servlet-name>
 		<url-pattern>/user/changePassword.do</url-pattern>
@@ -93,9 +90,10 @@
 		<servlet-name>UserHandler</servlet-name>
 		<url-pattern>/user/registerVerification.do</url-pattern>
 	</servlet-mapping>
+	
 	<servlet-mapping>
 		<servlet-name>UserHandler</servlet-name>
-		<url-pattern>/user/resendPassword.do</url-pattern>
+		<url-pattern>/user/approvedresidents.do</url-pattern>
 	</servlet-mapping>
 	
 	<servlet-mapping>
@@ -106,6 +104,7 @@
 		<servlet-name>ComplaintHandler</servlet-name>
 		<url-pattern>/user/complaint.do</url-pattern>
 	</servlet-mapping>
+	
 	
 	 
 	<welcome-file-list>

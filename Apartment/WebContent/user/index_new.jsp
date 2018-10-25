@@ -44,14 +44,25 @@
 								<tr>
 									<td><b><%=errorMessage%></b></td>
 								</tr>
-								
+								 <tr>
+								    <th>Notice</th>
+								  </tr>
 								 <tr>
 									<td colspan="3"><%@ include file="include_user_notice_list.jsp"%></td>
 								</tr>
+								 <tr>
+								    <th>Complaints</th> 
+								  </tr>
 								<tr>
 									<td colspan="3"><%@ include file="include_user_complaint_list.jsp"%></td>
 								</tr>
-								
+								 <tr>
+								    <th>Members</th> 
+								 </tr>
+								 <tr>
+									<td colspan="3"><%@ include file="include_members_list.jsp"%></td>
+								</tr>
+								 
 						</table>
 					</div>
 				</TD>
