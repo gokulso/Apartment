@@ -339,9 +339,9 @@ public class NoticeHandler extends HttpServlet
 			//Create prepared statement
 			procDelete = con.prepareCall("{ call uspDeleteNoticeBoard(?) }");
 		    
-		/*	 	
-			procDelete.setInt("NoticeId",1);
-		*/
+		 	
+			procDelete.setInt("NoticeId",noticeBean.getId());
+		
 		    
 			//logger.info("Society Registration DSQL : " + insertSql);
 			procDelete.executeUpdate();

@@ -136,14 +136,14 @@ public class ComplaintHandler extends HttpServlet
 			int status = updateComplaint(complaintBean);
 			System.out.println("After UPDATE Complaint");			
 			redirectPage = PAGE_DEFAULT ;
-		}		
+		}	*/	
 		else if(action.equalsIgnoreCase("delete"))
 		{
 			System.out.println("Before delete Complaint");
 			int status = deleteComplaint(complaintBean);
 			System.out.println("After delete Complaint");			
 			redirectPage = PAGE_DEFAULT;
-		}*/
+		}
 			
 		 try 
 		 {
@@ -154,6 +154,26 @@ public class ComplaintHandler extends HttpServlet
 		 {
 		   e.printStackTrace();
 		 }		
+	}
+
+	private int deleteComplaint(ComplaintBean complaintBean) {
+		try 
+		{
+			Connection con = DatabaseConnection.getConnection();	
+			CallableStatement procDelete=null;
+			//Create prepared statement
+			procDelete = con.prepareCall("{ call uspDeleteComplaint(?) }");
+			procDelete.setInt("ComplaintId",complaintBean.getId());
+			//logger.info("Society Registration DSQL : " + insertSql);
+			procDelete.executeUpdate(); 
+		} 
+		catch (SQLException e)
+		{
+			 System.out.println("Exception = " + e.getMessage());
+			 e.printStackTrace();
+			  
+		}
+		return 1;
 	}
 
 	public int  registerComplaint(HttpServletRequest request) throws ComplaintRegistrationFailedException
