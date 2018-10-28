@@ -23,6 +23,11 @@ function registerUser()
 	document.homepage.action="user/user_registration.jsp";
 	document.homepage.submit();
 }
+
+function resetPassword(){
+	document.homepage.action="user/change_password.jsp";
+	document.homepage.submit();
+}
 </script>
 </head>
 								 
@@ -167,7 +172,7 @@ function registerUser()
 												<td></td>
 												<td>
 													<input type="submit" name="Login" class="buttonStandard" tabindex="104"  value=" Login "   title="Login">
-													<input type="Reset" name="Reset" class="buttonStandard" tabindex="105"  value=" Reset " title="Reset">
+													<input type="Reset" onclick="javascript:resetPassword()" name="Reset" class="buttonStandard" tabindex="105"  value=" Reset " title="Reset">
 												</td>
 											</tr>
 											

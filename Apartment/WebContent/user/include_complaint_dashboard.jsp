@@ -34,7 +34,7 @@
 					<td> <%=bean.getCreatedDate()%> </td>
 					<td><a href="complaint.do?action=view&id=<%=bean.getId()%>"> <%=bean.getSubject()%></a> </td>
 					<td><a href="complaint.do?action=update&id=<%=bean.getId()%>">Update</a>
-					<td><a href="complaint.do?action=update&id=<%=bean.getId()%>">Delete</a>
+					<td><a href="complaint.do?action=delete&id=<%=bean.getId()%>">Delete</a>
 				</tr>	
 		 		
 		 		
