@@ -30,16 +30,23 @@
 		</td>
 	</tr>
 </table>
+<%
+   //Check for userSession
+   
+   boolean sessionActive = SessionHandler.isActiveSession(request,response);
+   System.out.println("isSessionActive  = " + sessionActive);
 
+%>
+
+<%if(sessionActive) {%>
 <table width="100%" cellSpacing="1" cellPadding="1" align="center" border="1">
 	<tr>
 		<td align="left" width="660">
-			 <a href="../user/index_new.jsp">Dashboard</a> |  <a href="../society/noticeboard.jsp">Notice Board </a>|  <a href="../user/complaints.jsp">Complaints </a> |
-			 <a href="../index.jsp">Home </a>
+			 <a href="../user/index_new.jsp">Dashboard</a> |  <a href="../society/noticeboard.jsp">Notice Board </a>|  <a href="../user/complaints.jsp">Complaints </a>
 		</td>
 	</tr>
 </table>
 
-
+<% }%>
 
 
