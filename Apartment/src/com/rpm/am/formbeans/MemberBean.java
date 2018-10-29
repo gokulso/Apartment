@@ -74,10 +74,11 @@ public class MemberBean
 	/**
 	 *  Constructor to setDate from MemberInformation
 	 */
-	public MemberBean(int id, String name,String wing,String mobile, Date date, boolean IsActive) {
+	public MemberBean(int id, String name,String wing, int flatno,String mobile, Date date, boolean IsActive) {
 		this.member_id = id;
 		this.member_name = name;
 		this.member_wing = wing;
+		this.member_flatnumber = flatno;
 		this.member_mobile = mobile;
 		this.ceateDate = date;
 		this.member_isactive = IsActive;

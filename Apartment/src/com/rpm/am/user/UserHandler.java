@@ -596,7 +596,7 @@ public class UserHandler extends HttpServlet
 	public ArrayList getCurrentMembers(String userId,String apartmentId){
 							ArrayList memberList = new ArrayList();
 		
-		String sql = "SELECT ID, NAME, WING, MOBILE, CREATEDDATE,IsActive FROM MemberInformation " ;
+		String sql = "SELECT ID, NAME, WING,FlatNumber,MOBILE, CREATEDDATE,IsActive FROM MemberInformation " ;
 		Connection con = DatabaseConnection.getConnection();	
 		System.out.println("SQL = " + sql );
 		
@@ -610,7 +610,7 @@ public class UserHandler extends HttpServlet
 			{
 				System.out.println("Inside RS  = " + count );
 				//System.out.println("Description  = " + rs.getString("Description") );
-				MemberBean memberBean = new MemberBean(rs.getInt("Id"),rs.getString("Name"),rs.getString("Wing"),rs.getString("Mobile"),rs.getDate("CreatedDate"), rs.getBoolean("IsActive"));
+				MemberBean memberBean = new MemberBean(rs.getInt("Id"),rs.getString("Name"),rs.getString("Wing"),rs.getInt("FlatNumber"),rs.getString("Mobile"),rs.getDate("CreatedDate"), rs.getBoolean("IsActive"));
 				memberList.add(memberBean);
 				count ++; 
 			}
